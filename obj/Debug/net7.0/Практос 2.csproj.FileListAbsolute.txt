@@ -1,0 +1,14 @@
+C:\Users\Fotters\source\repos\Практос 2\bin\Debug\net7.0\Практос 2.exe
+C:\Users\Fotters\source\repos\Практос 2\bin\Debug\net7.0\Практос 2.deps.json
+C:\Users\Fotters\source\repos\Практос 2\bin\Debug\net7.0\Практос 2.runtimeconfig.json
+C:\Users\Fotters\source\repos\Практос 2\bin\Debug\net7.0\Практос 2.dll
+C:\Users\Fotters\source\repos\Практос 2\bin\Debug\net7.0\Практос 2.pdb
+C:\Users\Fotters\source\repos\Практос 2\obj\Debug\net7.0\Практос 2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Fotters\source\repos\Практос 2\obj\Debug\net7.0\Практос 2.AssemblyInfoInputs.cache
+C:\Users\Fotters\source\repos\Практос 2\obj\Debug\net7.0\Практос 2.AssemblyInfo.cs
+C:\Users\Fotters\source\repos\Практос 2\obj\Debug\net7.0\Практос 2.csproj.CoreCompileInputs.cache
+C:\Users\Fotters\source\repos\Практос 2\obj\Debug\net7.0\Практос 2.dll
+C:\Users\Fotters\source\repos\Практос 2\obj\Debug\net7.0\refint\Практос 2.dll
+C:\Users\Fotters\source\repos\Практос 2\obj\Debug\net7.0\Практос 2.pdb
+C:\Users\Fotters\source\repos\Практос 2\obj\Debug\net7.0\Практос 2.genruntimeconfig.cache
+C:\Users\Fotters\source\repos\Практос 2\obj\Debug\net7.0\ref\Практос 2.dll
