@@ -6,64 +6,80 @@ class Program
     {
         while (true)
         {
-            Console.WriteLine("Выберите программу:");
-            Console.WriteLine("1. Угадай число");
+            Console.WriteLine("Меню:");
+            Console.WriteLine("1. Игра 'Угадай число'");
             Console.WriteLine("2. Таблица умножения");
             Console.WriteLine("3. Вывод делителей числа");
             Console.WriteLine("4. Выход");
-            int choice = int.Parse(Console.ReadLine());
+            //Менюшка
 
-            switch (choice)
+            if (int.TryParse(Console.ReadLine(), out int choice))
             {
-                case 1:
-                    PlayGuessTheNumber();
-                    break;
-                case 2:
-                    PrintMultiplicationTable();
-                    break;
-                case 3:
-                    PrintDivisors();
-                    break;
-                case 4:
-                    Environment.Exit(0);
-                    break;
-                default:
-                    Console.WriteLine("Некорректный выбор. Попробуйте снова.");
-                    break;
-            }
-        }
-    }
-
-    static void PlayGuessTheNumber()
-    {
-        Console.WriteLine("Игра 'Угадай число'");
-        Random random = new Random();
-        int targetNumber = random.Next(101);
-        int attempts = 0;
-
-        while (true)
-        {
-            Console.Write("Введите число от 0 до 100: \n ");
-            int userGuess = int.Parse(Console.ReadLine());
-            attempts++;
-
-            if (userGuess == targetNumber)
-            {
-                Console.WriteLine("Харош угадал число");
-                return;
-            }
-            else if (userGuess < targetNumber)
-            {
-                Console.WriteLine("Загаданное число больше.");
+                switch (choice)
+                {
+                    case 1:
+                        UGADAIKA();
+                        break;
+                    case 2:
+                        TablitsaUmnogeniya();
+                        break;
+                    case 3:
+                        Deliteli();
+                        break;
+                    case 4:
+                        return; 
+                    default:
+                        Console.WriteLine("Попробуй снова.");
+                        break;
+                }
             }
             else
             {
-                Console.WriteLine("Загаданное число меньше.");
+                Console.WriteLine("Попробуй снова.");
             }
         }
     }
+    //кейс с выборкой менюшки
 
-    static void PrintMultiplicationTable()
+    static void UGADAIKA()
+    {
+        Random random = new Random();
+        int targetNumber = random.Next(1, 101);
+        int attempts = 0;
+
+        Console.WriteLine("Игра 'Угадай число'");
+        Console.WriteLine("Попробуй угадать число от 1 до 100.");
+
+        while (true)
+        {
+            Console.Write("Введите вашу догадку: ");
+            if (int.TryParse(Console.ReadLine(), out int guess))
+            {
+                attempts++;
+
+                if (guess == targetNumber)
+                {
+                    Console.WriteLine("Бинго, верно!");
+                    break;
+                }
+                else if (guess < targetNumber)
+                {
+                    Console.WriteLine("Число больше.");
+                }
+                else
+                {
+                    Console.WriteLine("Число меньше.");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Введи целое число.");
+            }
+        }
+    }
+    //Игра угадай число
+
+    static void TablitsaUmnogeniya()
     {
         Console.WriteLine("Таблица умножения:");
 
@@ -71,25 +87,31 @@ class Program
         {
             for (int j = 1; j <= 10; j++)
             {
-                Console.Write($"{i * j,4}");
+                Console.Write($"{i * j,3} ");
             }
             Console.WriteLine();
         }
     }
+    //Таблица умножения
 
-    static void PrintDivisors()
+    static void Deliteli()
     {
         Console.Write("Введите число: ");
-        int number = int.Parse(Console.ReadLine());
-
-        Console.Write("Делители числа {number}: ");
-        for (int i = 1; i <= number; i++)
+        if (int.TryParse(Console.ReadLine(), out int number))
         {
-            if (number % i == 0)
+            Console.WriteLine("Делители: " + number);
+            for (int i = 1; i <= number; i++)
             {
-                Console.Write(i + " ");
+                if (number % i == 0)
+                {
+                    Console.WriteLine(i);
+                }
             }
         }
-        Console.WriteLine();
+        else
+        {
+            Console.WriteLine("Введи целое число.");
+        }
     }
 }
+//Делители от числа
